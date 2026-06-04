@@ -1,0 +1,171 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Khuta Community Platform — جمعية خطى الأمان
+   Premium NGO design system: white, deep emerald green, soft gray. */
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Cairo:wght@500;600;700;800;900&display=swap");
+
+@theme inline {
+  --font-sans: "Tajawal", "Cairo", system-ui, sans-serif;
+  --font-display: "Cairo", "Tajawal", system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-soft: 0 1px 2px oklch(0.2 0.04 160 / 0.04), 0 8px 24px oklch(0.2 0.04 160 / 0.06);
+  --shadow-card: 0 1px 3px oklch(0.2 0.04 160 / 0.05), 0 16px 40px -12px oklch(0.4 0.08 160 / 0.12);
+  --gradient-hero: linear-gradient(135deg, oklch(0.45 0.13 160) 0%, oklch(0.32 0.10 165) 100%);
+  --gradient-soft: linear-gradient(180deg, oklch(0.985 0.008 160) 0%, oklch(1 0 0) 100%);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.02 160);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 160);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 160);
+  --primary: oklch(0.45 0.13 160);
+  --primary-foreground: oklch(0.99 0.005 160);
+  --primary-soft: oklch(0.96 0.03 160);
+  --primary-deep: oklch(0.32 0.10 165);
+  --secondary: oklch(0.97 0.008 160);
+  --secondary-foreground: oklch(0.25 0.04 160);
+  --muted: oklch(0.97 0.006 160);
+  --muted-foreground: oklch(0.48 0.02 160);
+  --accent: oklch(0.95 0.04 160);
+  --accent-foreground: oklch(0.30 0.08 160);
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(0.99 0.005 160);
+  --border: oklch(0.92 0.008 160);
+  --input: oklch(0.92 0.008 160);
+  --ring: oklch(0.45 0.13 160);
+  --chart-1: oklch(0.55 0.14 160);
+  --chart-2: oklch(0.70 0.10 165);
+  --chart-3: oklch(0.40 0.12 165);
+  --chart-4: oklch(0.80 0.08 160);
+  --chart-5: oklch(0.30 0.10 165);
+  --sidebar: oklch(0.99 0.005 160);
+  --sidebar-foreground: oklch(0.18 0.02 160);
+  --sidebar-primary: oklch(0.45 0.13 160);
+  --sidebar-primary-foreground: oklch(0.99 0.005 160);
+  --sidebar-accent: oklch(0.96 0.03 160);
+  --sidebar-accent-foreground: oklch(0.30 0.08 160);
+  --sidebar-border: oklch(0.92 0.008 160);
+  --sidebar-ring: oklch(0.45 0.13 160);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  html[dir="rtl"] body { text-align: right; }
+}
+
+@layer utilities {
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .bg-gradient-hero { background-image: var(--gradient-hero); }
+  .bg-gradient-soft { background-image: var(--gradient-soft); }
+  .container-narrow { max-width: 1200px; margin-inline: auto; padding-inline: 1.25rem; }
+  .hover-lift {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.35s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+  .img-zoom { overflow: hidden; }
+  .img-zoom img {
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.5s ease;
+    will-change: transform;
+  }
+  .img-zoom:hover img {
+    transform: scale(1.07);
+  }
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: inline-end;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: inline-start;
+  }
+  .btn-press {
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.25s ease, color 0.25s ease;
+  }
+  .btn-press:hover { transform: translateY(-2px); }
+  .btn-press:active { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
